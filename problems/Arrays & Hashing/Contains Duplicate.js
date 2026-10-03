@@ -20,7 +20,7 @@ class Solution {
 }
 let sol = new Solution();
 
-let arr = [1, 2, 3, 4, 5, 3,6,9];
+let arr = [1, 2, 3, 4, 5,6,9];
 console.log(sol.hasDuplicate(arr));
 
 
