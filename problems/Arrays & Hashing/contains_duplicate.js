@@ -4,8 +4,7 @@ class Solution {
      * @return {boolean}
      */
     hasDuplicate(nums) {
-
-     
+        
      const s = new Set();
     
      for(let n of nums){
