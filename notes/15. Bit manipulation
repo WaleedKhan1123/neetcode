@@ -1,0 +1,9 @@
+a & b      // AND
+a | b      // OR
+a ^ b      // XOR   (x ^ x = 0, x ^ 0 = x -> Single Number)
+~a         // NOT
+a << 1     // multiply by 2
+a >> 1     // divide by 2 (keeps sign)
+a >>> 0    // treat as unsigned 32-bit (Reverse Bits needs this)
+n & 1      // last bit (is it odd?)
+n & (n - 1) // removes the lowest set bit (Number of 1 Bits)

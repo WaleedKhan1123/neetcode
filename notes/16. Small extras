@@ -1,0 +1,6 @@
+console.log(x, arr)            // debugging
+JSON.stringify(arr)            // print nested arrays clearly
+Number.isInteger(x)
+str.padStart(3, "0")           // "7" -> "007"
+BigInt(x)                      // for numbers beyond 2^53 (rare)
+arr.flat()                     // [[1],[2]] -> [1,2]
