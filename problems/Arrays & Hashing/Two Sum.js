@@ -1,37 +1,22 @@
 class Solution {
-    /**
-     * @param {number[]} nums
-     * @param {number} target
-     * @return {number[]}
-     */
-    twoSum(nums, target) {
+  twoSum(nums, target) {
+    const seen = new Map();            // number → its index
 
-       
-        let i = 0
-        let j = 0
-        for(let n of nums){
-            
-            i+=1
-            j= i
-            while(j<nums.length){
-            if(n+nums[j]===target){
+    for (let i = 0; i < nums.length; i++) {
+      const n = nums[i];
+      const need = target - n;         // the partner we're looking for
 
-                return [nums.indexOf(n),j]
-            }
-            j+=1
+      if (seen.has(need)) {
+        return [seen.get(need), i];    // partner's index, current index
+      }
 
-        }
-       
-        
-    
+      seen.set(n, i);                  // remember this number for later
     }
-
-    }
+  }
 }
-
 
 const sol = new Solution();
 
-let nums=[3,4,5,6]
-let target=7
+let nums=[5,5]
+let target=10
 console.log(sol.twoSum(nums,target))
