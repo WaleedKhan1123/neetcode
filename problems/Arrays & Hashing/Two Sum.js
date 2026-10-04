@@ -7,20 +7,21 @@ class Solution {
     twoSum(nums, target) {
 
        
-        let count = 0
+        let i = 0
+        let j = 0
         for(let n of nums){
             
-            count+=1
-          
-            while(count<=nums.length){
-            if(n+nums[count]===target){
+            i+=1
+            j= i
+            while(j<nums.length){
+            if(n+nums[j]===target){
 
-                return [nums.indexOf(n),count]
+                return [nums.indexOf(n),j]
             }
-            count+=1
+            j+=1
 
         }
-        count=nums.indexOf(n)+1
+       
         
     
     }
@@ -31,6 +32,6 @@ class Solution {
 
 const sol = new Solution();
 
-let nums = [4,5,6];
-let target = 9
+let nums=[3,4,5,6]
+let target=7
 console.log(sol.twoSum(nums,target))
