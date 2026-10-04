@@ -7,7 +7,6 @@ class Solution {
     isAnagram(s, t) {
     
         if (s.length!==t.length) return false;
-        let index = 0
         const keystoring = new Map();
         
         for( let n of s){
