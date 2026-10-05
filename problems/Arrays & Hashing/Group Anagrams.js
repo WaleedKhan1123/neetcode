@@ -1,70 +1,23 @@
 class Solution {
-    /**
-     * @param {string[]} strs
-     * @return {string[][]}
-     */
+  groupAnagrams(strs) {
+    const groups = new Map();              // label → list of words
 
-    isAnagram(s, t) {
-    
-        if (s.length!==t.length) return false;
-        const keystoring = new Map();
-        
-        for( let n of s){
-                   
-            if( keystoring.has(n)){
+    for (const s of strs) {
+      const count = new Array(26).fill(0); // one slot per letter a–z
 
-                keystoring.set(n,keystoring.get(n)+1)
+      for (const ch of s) {
+        count[ch.charCodeAt(0) - 97]++;    // 'a' → 0, 'b' → 1, ... 'z' → 25
+      }
 
-            }
-            else{
+      const key = count.join(",");         // the label, e.g. "1,0,1,0,...,1,..."
 
-                keystoring.set(n,1)
-            }
-        }
-        
-        for(let n of t){
-
-        if(keystoring.has(n)){
-
-            keystoring.set(n,keystoring.get(n)-1);
-        }
-
-        }
-
-        for (const values of keystoring.values()){
-            if (values!=0){
-
-                return false
-            }
-        }
-       return true
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(s);
     }
 
-    groupAnagrams(strs) {
-
-        let group= []
-        let count = 0;
-        
-    for(let s of strs){
-       if(!group.some(g => g.includes(s))){
-       group.push([s]);   
-       for(let i=count+1;i<strs.length;i++){
-        let anagram = this.isAnagram(s,strs[i]);
-        if(anagram){
-
-           group[group.length - 1].push(strs[i]);
-        } 
-       
-         
-       }
-    }
-        count++;
-
-    }
-     return group
-    }
+    return [...groups.values()];
+  }
 }
-
 
 
 const sol = new Solution();
