@@ -1,16 +1,16 @@
 class Solution {
   twoSum(nums, target) {
-    const seen = new Map();            // number → its index
+    const seen = new Map();           
 
     for (let i = 0; i < nums.length; i++) {
       const n = nums[i];
-      const need = target - n;         // the partner we're looking for
+      const need = target - n;        
 
       if (seen.has(need)) {
-        return [seen.get(need), i];    // partner's index, current index
+        return [seen.get(need), i];    
       }
 
-      seen.set(n, i);                  // remember this number for later
+      seen.set(n, i);                  
     }
   }
 }

@@ -1,15 +1,15 @@
 class Solution {
   groupAnagrams(strs) {
-    const groups = new Map();              // label → list of words
+    const groups = new Map();              
 
     for (const s of strs) {
-      const count = new Array(26).fill(0); // one slot per letter a–z
+      const count = new Array(26).fill(0); 
 
       for (const ch of s) {
-        count[ch.charCodeAt(0) - 97]++;    // 'a' → 0, 'b' → 1, ... 'z' → 25
+        count[ch.charCodeAt(0) - 97]++;    
       }
 
-      const key = count.join(",");         // the label, e.g. "1,0,1,0,...,1,..."
+      const key = count.join(",");        
 
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(s);
