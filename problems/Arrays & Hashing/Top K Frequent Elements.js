@@ -6,7 +6,31 @@ class Solution {
      */
     topKFrequent(nums, k) {
 
-        console.log(nums,k)
+        const list = new Map();
+    
+        for(let s of nums){
+        
+            if(!list.has(s)){
+
+            list.set(s,1);
+
+            }
+
+            else{
+            list.set(s,list.get(s)+1);
+
+            }
+             
+
+        }
+       
+      
+       return [...list.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, k)
+        .map(pair => pair[0]);
+      
+       
     }
 
 
