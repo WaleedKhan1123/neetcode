@@ -1,10 +1,34 @@
 class Solution {
-  encode(strs) {
-    return "";     // your code
+encode(strs) {
+  let res = "";
+  for (const s of strs) {
+    res += s.length + "#" + s;
   }
+  return res;
+}
 
   decode(str) {
-    return [];     // your code
+   let res = [];
+
+   let i =0;
+   
+   while (i<str.length){
+   
+     const j = str.indexOf("#",i);
+
+     const len = parseInt(str.slice(i,j));
+
+     const word = str.slice(j+1,(j+1)+len);
+
+     res.push(word);
+     
+     i = (j+1)+len;
+
+   }
+
+
+    
+    return res;     // your code
   }
 }
 
