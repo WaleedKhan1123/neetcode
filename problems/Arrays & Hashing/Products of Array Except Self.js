@@ -5,7 +5,7 @@ class Solution {
      */
     productExceptSelf(nums) {
 
-        console.log(nums)
+       
     }
 }
 
