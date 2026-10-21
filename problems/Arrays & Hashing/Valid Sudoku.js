@@ -5,7 +5,7 @@ class Solution {
      */
     isValidSudoku(board) {
 
-        
+        return board
     }
 }
 
