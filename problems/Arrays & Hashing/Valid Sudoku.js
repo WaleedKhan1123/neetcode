@@ -4,8 +4,11 @@ class Solution {
      * @return {boolean}
      */
     isValidSudoku(board) {
-
-        return board
+        const rows = Array.from({ length: 9 }, () => new Set());
+        const columns = Array.from({length:9},() => new Set());
+        const box = Array.from({length:9}, () => new Set());
+        
+        
     }
 }
 
@@ -22,5 +25,5 @@ let board =
  [".",".",".",".",".",".","2",".","."],
  [".",".",".","4","1","9",".",".","8"],
  [".",".",".",".","8",".",".","7","9"]]
- 
+
 console.log(sol.isValidSudoku(board))
